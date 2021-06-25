@@ -1,5 +1,3 @@
-
-
 function [TaylorExpansion] = arcsin_result(x)
 %ARCSIN_RESULT arcsin x = x + 1/(2*3)x^3 + (1*3)/(2*4*5)x^5 +(1*3*5)/(2*4*6*7)x^7 + ...
 %   计算arcsin函数的结果
@@ -18,9 +16,12 @@ function [TaylorExpansion] = arcsin_result(x)
         i = i+1;
         n = n+1;
         
-        if abs(sum) <=1e-6
+        if abs(sum) <=1e-10
             break;
         end      
     end
     
 end
+
+
+
