@@ -24,7 +24,8 @@ while(func~=0)
             fprintf ('Result=%3.2f\n',result);
         case 5
             clc;
-        case 0
+            
+        case 6
             break;
         otherwise
             disp('错误的输入，请重新输入！');
