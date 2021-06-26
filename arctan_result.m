@@ -23,4 +23,3 @@ function [TaylorExpansion] = arctan_result(x)
 
 
 end
-

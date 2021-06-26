@@ -22,6 +22,3 @@ function [TaylorExpansion] = arcsin_result(x)
     end
     
 end
-
-
-

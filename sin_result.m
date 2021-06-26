@@ -23,4 +23,3 @@ function [TaylorExpansion] = sin_result(x)
     
 
 end
-
