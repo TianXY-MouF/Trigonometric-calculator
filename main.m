@@ -16,8 +16,12 @@ while(func~=0)
             fprintf ('Result=%3.2f\n',result);
         case 3
              x=input_number();
-            result=arcsin_result(x);
-            fprintf ('Result=%3.2f\n',result);
+             if((x*180/pi)<=-1||(x*180/pi) >= 1)
+             fprintf ('不在定义域内，请重新输入！');
+             else
+             result=arcsin_result(x);
+             fprintf ('Result=%3.2f\n',result);
+             end
         case 4
              x=input_number();
             result=arctan_result(x);
@@ -40,5 +44,3 @@ while(func~=0)
        
 end
 disp('感谢使用！');
- 
-
