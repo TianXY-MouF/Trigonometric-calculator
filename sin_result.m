@@ -1,5 +1,5 @@
 function [TaylorExpansion] = sin_result(x)
-%SIN 
+%SIN  sin x = x-x3/3!+x5/5!-...(-1)k-1*x2k-1/(2k-1)!+... 
 %   计算sin函数的结果
  i = 1;
  negation = 1;%取反
@@ -20,6 +20,7 @@ function [TaylorExpansion] = sin_result(x)
             
             
     end
+    TaylorExpansion=roundn(TaylorExpansion,-2);
     
 
 end
