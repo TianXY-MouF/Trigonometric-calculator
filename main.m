@@ -15,15 +15,11 @@ while(func~=0)
             result=cos_result(x);
             fprintf ('Result=%3.2f\n',result);
         case 3
-             x=input_number();
-             if((x*180/pi)<=-1||(x*180/pi) >= 1)
-             fprintf ('不在定义域内，请重新输入！');
-             else
+             x=input('请输入x:\n');
              result=arcsin_result(x);
              fprintf ('Result=%3.2f\n',result);
-             end
         case 4
-             x=input_number();
+             x=input('请输入x:\n');
             result=arctan_result(x);
             fprintf ('Result=%3.2f\n',result);
         case 5
@@ -44,3 +40,5 @@ while(func~=0)
        
 end
 disp('感谢使用！');
+ 
+
