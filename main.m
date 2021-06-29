@@ -15,16 +15,17 @@ while(func~=0)
             result=cos_result(x);
             fprintf ('Result=%3.2f\n',result);
         case 3
-             x=input_number();
-            result=arcsin_result(x);
-            fprintf ('Result=%3.2f\n',result);
+             x=input('请输入x:\n');
+             result=arcsin_result(x);
+             fprintf ('Result=%3.2f\n',result);
         case 4
-             x=input_number();
+             x=input('请输入x:\n');
             result=arctan_result(x);
             fprintf ('Result=%3.2f\n',result);
         case 5
             clc;
-        case 0
+            
+        case 6
             break;
         otherwise
             disp('错误的输入，请重新输入！');

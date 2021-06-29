@@ -3,13 +3,15 @@ function [x] = input_number()
 %   三角函数计算的输入
 double x;
 x=input('请输入x:\n');
-if(x>2*pi)
-    x=mod(x,2*pi);
-end
-if(x<-2*pi)
-    x=mod(x,-2*pi);
+if(x>360)
+    x=mod(x,360);
 end
 
+if(x<-360)
+    x=mod(x,-360);
+end
+
+x=x*pi/180;
   
 
 
