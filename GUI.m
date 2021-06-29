@@ -83,8 +83,17 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 textString=get(handles.edit1,'String');
-textString=strcat(textString,'sin');
-set(handles.edit1,'String',textString);
+num=str2double(textString);
+if(num>360)
+    num=mod(num,360);
+end
+
+if(num<-360)
+    num=mod(num,-360);
+end
+num=num*pi/180;
+result=sin_result(num);
+set(handles.edit2,'String',num2str(result));
 guidata(hObject,handles);
 
 
@@ -142,8 +151,17 @@ function pushbutton6_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 textString=get(handles.edit1,'String');
-textString=strcat(textString,'cos');
-set(handles.edit1,'String',textString);
+num=str2double(textString);
+if(num>360)
+    num=mod(num,360);
+end
+
+if(num<-360)
+    num=mod(num,-360);
+end
+num=num*pi/180;
+result=cos_result(num);
+set(handles.edit2,'String',num2str(result));
 guidata(hObject,handles);
 
 
@@ -197,8 +215,9 @@ function pushbutton11_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 textString=get(handles.edit1,'String');
-textString=strcat(textString,'arcsin');
-set(handles.edit1,'String',textString);
+num=str2double(textString);
+result=arcsin_result(num);
+set(handles.edit2,'String',num2str(result));
 guidata(hObject,handles);
 
 
@@ -252,10 +271,10 @@ function pushbutton16_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 textString=get(handles.edit1,'String');
-textString=strcat(textString,'arctan');
-set(handles.edit1,'String',textString);
+num=str2double(textString);
+result=arctan_result(num);
+set(handles.edit2,'String',num2str(result));
 guidata(hObject,handles);
-
 
 
 % --- Executes on button press in pushbutton17.
@@ -330,8 +349,8 @@ function pushbutton23_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 textString = get(handles.edit1,'String');
-aa = eval(textString);
-set(handles.edit2,'String',aa);
+result = eval(textString);
+set(handles.edit2,'String',result);
 guidata(hObject, handles);
 
 
