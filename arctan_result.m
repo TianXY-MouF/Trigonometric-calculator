@@ -1,17 +1,21 @@
 function [TaylorExpansion] = arctan_result(x)
 %ARCTAN_RESULT arctan x = x - x^3/3 + x^5/5 - ... 
-%   ¼ÆËãarctanº¯ÊıµÄ½á¹û     
-if(x>=-1&&x <=1)                                 %ÅĞ¶ÏxÊÇ·ñÔÚÊÕÁ²ÓòÒÔÄÚ£¬ÈôÔÚÊÕÁ²ÓòÒÔÄÚ£¬Õı³£Ì©ÀÕÕ¹¿ª
- negation = 1;%È¡·´
- index = x;   %Ö¸Êı
- Denominator = 1;%½×³Ë
+
+%   è®¡ç®—arctanå‡½æ•°çš„ç»“æœ     
+if(x>=-1&&x <=1)                                 %åˆ¤æ–­xæ˜¯å¦åœ¨æ”¶æ•›åŸŸä»¥å†…ï¼Œè‹¥åœ¨æ”¶æ•›åŸŸä»¥å†…ï¼Œæ­£å¸¸æ³°å‹’å±•å¼€
+
+
+ negation = 1;%å–å
+ index = x;   %æŒ‡æ•°
+ Denominator = 1;%é˜¶ä¹˜
  TaylorExpansion = x;
     while(true)
         
-        Denominator = Denominator +2;               %Çó·ÖÄ¸µÄÖµ
-        index = index*x*x;                          %Çónum2µÄ´Î·½
-        negation = -negation;                       %Ã¿´ÎÑ­»·È¡·´
-        sum = index / Denominator * negation;       %Ì©ÀÕÕ¹¿ªÊ½ÇóºÍ
+
+        Denominator = Denominator +2;               %æ±‚åˆ†æ¯çš„å€¼
+        index = index*x*x;                          %æ±‚num2çš„æ¬¡æ–¹
+        negation = -negation;                       %æ¯æ¬¡å¾ªç¯å–å
+        sum = index / Denominator * negation;       %æ³°å‹’å±•å¼€å¼æ±‚å’Œ
         TaylorExpansion = sum+TaylorExpansion;
         if abs(sum) <=1e-6
             break;
@@ -20,18 +24,20 @@ if(x>=-1&&x <=1)                                 %ÅĞ¶ÏxÊÇ·ñÔÚÊÕÁ²ÓòÒÔÄÚ£¬ÈôÔÚÊÕÁ
             
     end
 end
-if(x<-1||x>1)                                       %ÅĞ¶ÏxÊÇ·ñÔÚÊÕÁ²ÓòÒÔÄÚ£¬Èô²»ÔÚÊÕÁ²ÓòÒÔÄÚ£¬Í¨¹ı
- x=1/x;                                             %arctan(x)+arctan(1/x)=pi/2 Çó½â
- negation = 1;%È¡·´
- index = x;   %Ö¸Êı
- Denominator = 1;%½×³Ë
+
+if(x<-1||x>1)                                       %åˆ¤æ–­xæ˜¯å¦åœ¨æ”¶æ•›åŸŸä»¥å†…ï¼Œè‹¥ä¸åœ¨æ”¶æ•›åŸŸä»¥å†…ï¼Œé€šè¿‡
+ x=1/x;                                             %arctan(x)+arctan(1/x)=pi/2 æ±‚è§£
+ negation = 1;%å–å
+ index = x;   %æŒ‡æ•°
+ Denominator = 1;%é˜¶ä¹˜
  TaylorExpansion = x;
     while(true)
         
-        Denominator = Denominator +2;                 %Çó·ÖÄ¸µÄÖµ
-        index = index*x*x;                            %Çónum2µÄ´Î·½
-        negation = -negation;                         %Ã¿´ÎÑ­»·È¡·´
-        sum = index / Denominator * negation;         %Ì©ÀÕÕ¹¿ªÊ½ÇóºÍ
+        Denominator = Denominator +2;                 %æ±‚åˆ†æ¯çš„å€¼
+        index = index*x*x;                            %æ±‚num2çš„æ¬¡æ–¹
+        negation = -negation;                         %æ¯æ¬¡å¾ªç¯å–å
+        sum = index / Denominator * negation;         %æ³°å‹’å±•å¼€å¼æ±‚å’Œ
+
         TaylorExpansion = sum+TaylorExpansion;
         
         if abs(sum) <=1e-6
