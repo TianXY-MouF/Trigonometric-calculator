@@ -234,17 +234,37 @@ guidata(hObject,handles);
 
 % --- Executes on button press in pushbutton21.°´¼ücot
 function pushbutton21_Callback(hObject, eventdata, handles)
-    textString = get(handles.edit1,'String');
-    textString = strcat(textString,'yjy_cot');
-    set(handles.edit1,'String',textString);
-    guidata(hObject, handles);
+textString=get(handles.edit1,'String');
+textString = eval(textString);
+num=str2double(textString);
+if(num>360)
+    num=mod(num,360);
+end
+
+if(num<-360)
+    num=mod(num,-360);
+end
+num=num*pi/180;
+result=cot_result(num);
+set(handles.edit2,'String',num2str(result));
+guidata(hObject,handles);
     
 % --- Executes on button press in pushbutton23.°´¼ütan
 function pushbutton23_Callback(hObject, eventdata, handles)
-    textString = get(handles.edit1,'String');
-    textString = strcat(textString,'xf_tanx');
-    set(handles.edit1,'String',textString);
-    guidata(hObject, handles);    
+textString=get(handles.edit1,'String');
+textString = eval(textString);
+num=str2double(textString);
+if(num>360)
+    num=mod(num,360);
+end
+
+if(num<-360)
+    num=mod(num,-360);
+end
+num=num*pi/180;
+result=tan_result(num);
+set(handles.edit2,'String',num2str(result));
+guidata(hObject,handles);  
 
 
 
