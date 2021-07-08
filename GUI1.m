@@ -207,10 +207,11 @@ result=sin_result(num);
 set(handles.edit2,'String',num2str(result));
 guidata(hObject,handles);
 
+
 % --- Executes on button press in pushbutton10.按键cos
 function pushbutton10_Callback(hObject, eventdata, handles)
 textString=get(handles.edit1,'String');
-textString = eval(textString);
+
 num=str2double(textString);
 if(num>360)
     num=mod(num,360);
@@ -223,6 +224,7 @@ num=num*pi/180;
 result=cos_result(num);
 set(handles.edit2,'String',num2str(result));
 guidata(hObject,handles);
+
     
 % --- Executes on button press in pushbutton20.按键arcsin
 function pushbutton20_Callback(hObject, eventdata, handles)
@@ -235,16 +237,7 @@ guidata(hObject,handles);
 % --- Executes on button press in pushbutton21.按键cot
 function pushbutton21_Callback(hObject, eventdata, handles)
 textString=get(handles.edit1,'String');
-textString = eval(textString);
 num=str2double(textString);
-if(num>360)
-    num=mod(num,360);
-end
-
-if(num<-360)
-    num=mod(num,-360);
-end
-num=num*pi/180;
 result=cot_result(num);
 set(handles.edit2,'String',num2str(result));
 guidata(hObject,handles);
@@ -252,19 +245,10 @@ guidata(hObject,handles);
 % --- Executes on button press in pushbutton23.按键tan
 function pushbutton23_Callback(hObject, eventdata, handles)
 textString=get(handles.edit1,'String');
-textString = eval(textString);
 num=str2double(textString);
-if(num>360)
-    num=mod(num,360);
-end
-
-if(num<-360)
-    num=mod(num,-360);
-end
-num=num*pi/180;
 result=tan_result(num);
 set(handles.edit2,'String',num2str(result));
-guidata(hObject,handles);  
+guidata(hObject,handles);
 
 
 
