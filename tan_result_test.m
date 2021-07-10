@@ -2,12 +2,12 @@ close all;
 clear;
 clc;
 %   本程序测试tan函数计算结果的正确性
-sita = -89:1:89;
+sita = -89.9:0.1:89.9;
 dy = zeros(1,length(sita));
 y1 = zeros(1,length(sita));
 y2 = zeros(1,length(sita));
-for i=1:179
-    x = i-90;
+for i=1:1799
+    x = -89.9+(i-1)/10;
     [out] = tan_result(x);
     y1(i) = out;
     y2(i) = tand(x);
